@@ -25,18 +25,77 @@ More about the dataset and similar climate datasets can be found at <https://ope
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks and results within the document. 
 
 
+## Data
+
+Here are the first few rows of the dataset. 
 ```{r import, echo=FALSE}
 
+# import data from the downloaded data file 
+# note the relative path for importing the data
+CO2Em <- read.csv("../data/edgar-co2-emissions.csv")
 
+head(CO2Em)
 
 ```
 
-## Including Plots
+It contains columns **`r colnames(CO2Em)`**. They are the country code, country Name, cateogrical sectors, year of CO2 emission was calculated, and the emission in kilotons (kt). The categorical sectors include `r levels(CO2Em$Sector)`.
 
-You can also embed plots, for example:
+The unit kilotons for the Emission column was not noted in the original dataset. We added the unit to the column name as **Emissions_kt** and saved the new dataset under the *data_derived* subfolder. 
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r renamecol, echo = FALSE}
+# change the column name of Emissions to include the unit kt
+CO2Em_kt <- CO2Em
+colnames(CO2Em_kt)[5] <- "Emissions_kt"
+
+#write the new dataframe into a csv file under data_derived
+
+write.csv(CO2Em_kt, "../data_derived/CO2Emission_kt.csv", row.names = FALSE)
+
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Carbon Dioxide emissions from different sectors in the U.S.
+
+We can filter out data for the United States and plot them in the following figure. 
+
+```{r plotEm, echo=FALSE, fig.show='asis'}
+
+#filter out US data and plot them
+
+CO2EM_US_plot <- ggplot(data = CO2Em[CO2Em$Code == 'USA', ], aes(x = Year, y = Emissions, color = Sector)) +
+  geom_point() +
+  ggtitle("Emissions of Carbon Dioxide from different sectors in the U.S.
+          ") +
+  labs( y = "Emissions (kt)") +
+  theme_classic() +
+  theme(legend.title = element_blank()) 
+  
+  
+ggsave("../figures/CO2Em_US.png")
+
+CO2EM_US_plot
+
+```
+
+## How significant are the changes over the years in the U.S.
+
+```{r plotEm_box, echo=FALSE, fig.show='asis'}
+
+#filter out US data and plot them
+
+CO2EM_US_Boxplot <- ggplot(data = CO2Em[CO2Em$Code == 'USA', ], aes(x = Sector, y = Emissions, color = Sector)) +
+  geom_boxplot() +
+  ggtitle("Emissions of Carbon Dioxide from different sectors in the U.S.
+          ") +
+  labs( y = "Emissions (kt)") +
+  coord_flip() +
+  theme_classic() +
+  theme(legend.position = "none") 
+  
+ggsave("../figures/CO2Em_US_Boxplot.png")
+
+CO2EM_US_Boxplot
+
+```
+
+
