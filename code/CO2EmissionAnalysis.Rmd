@@ -1,0 +1,42 @@
+---
+title: "An Anlysis of CO2 Emission"
+author: "Ye Li"
+date: "1/17/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+#load needed R packages for data analysis and R Markdown
+knitr::opts_chunk$set(echo = TRUE)
+
+require(tidyverse)
+
+```
+
+## Introduction
+
+This is a mini-report to analyze and visualize the **EDGAR CO2 emissions 1970-2016** dataset. The dataset is downloaded from the GitHub repository at <https://github.com/openclimatedata/edgar-co2-emissions> on January 23, 2020. 
+
+The dataset was originally reported in Crippa, M., Oreggioni, G., Guizzardi, D., Muntean, M., Schaaf, E., Lo Vullo, E., Solazzo, E., Monforti-Ferrario, F., Olivier, J.G.J., Vignati, E., Fossil CO2 and GHG emissions of all world countries - 2019 Report, EUR 29849 EN, Publications Office of the European Union, Luxembourg, 2019, ISBN 978-92-76-11100-9, [https://doi.org/10.2760/687800, JRC117610.](https://doi.org/10.2760/687800, JRC117610.)
+
+
+More about the dataset and similar climate datasets can be found at <https://openclimatedata.net/>
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks and results within the document. 
+
+
+```{r import, echo=FALSE}
+
+
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
