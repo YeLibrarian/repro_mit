@@ -9,7 +9,7 @@ output: html_document
 #load needed R packages for data analysis and R Markdown
 knitr::opts_chunk$set(echo = TRUE)
 
-require(tidyverse)
+require(ggplot2)
 
 ```
 
