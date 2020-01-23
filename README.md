@@ -25,7 +25,13 @@ The dataset was originally reported in Crippa, M., Oreggioni, G., Guizzardi, D.,
 
 More about the dataset and similar climate datasets can be found at <https://openclimatedata.net/>
 
-## This Project
+## Run this Project in the cloud
+To run this code without installing anything, click on the launch binder badge above. This will launch Rstudio on a free, small, cloud instance. It may take a two or three minutes to launch the server and initialise Rstudio. 
+
+Once the browder tab with the RStudio running in it opens up, you can find the file under *code* folder named *CO2EmissionsAnalysis.Rmd* in the Files tab of the bottom and right pane. Open the file by clicking on it. Then, click the Knit button just above the code to generate the report CO2EmissionAnalysis.html. 
+
+## Structue of the project
+... ...
 
 
 
