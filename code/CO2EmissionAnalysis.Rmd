@@ -15,7 +15,7 @@ require(ggplot2)
 
 ## Introduction
 
-This is a mini-report to analyze and visualize the **EDGAR CO2 emissions 1970-2016** dataset. The dataset is downloaded from the GitHub repository at <https://github.com/openclimatedata/edgar-co2-emissions> on January 23, 2020. 
+This is a mini-report to analyze and visualize the **EDGAR CO2 emissions 1970-2018** dataset. The dataset is downloaded from the GitHub repository at <https://github.com/openclimatedata/edgar-co2-emissions> on January 23, 2020. 
 
 The dataset was originally reported in Crippa, M., Oreggioni, G., Guizzardi, D., Muntean, M., Schaaf, E., Lo Vullo, E., Solazzo, E., Monforti-Ferrario, F., Olivier, J.G.J., Vignati, E., Fossil CO2 and GHG emissions of all world countries - 2019 Report, EUR 29849 EN, Publications Office of the European Union, Luxembourg, 2019, ISBN 978-92-76-11100-9, [https://doi.org/10.2760/687800, JRC117610.](https://doi.org/10.2760/687800, JRC117610.)
 
@@ -38,18 +38,18 @@ head(CO2Em)
 
 ```
 
-It contains columns **`r colnames(CO2Em)`**. They are the country code, country Name, cateogrical sectors, year of CO2 emission was calculated, and the emission in kilotons (kt). The categorical sectors include `r levels(CO2Em$Sector)`.
+It contains columns **`r colnames(CO2Em)`**. They are the country code, country Name, cateogrical sectors, year of CO2 emission was calculated, and the emission in Megaton (Mt) CO₂ per year. The categorical sectors include `r levels(CO2Em$Sector)`.
 
-The unit kilotons for the Emission column was not noted in the original dataset. We added the unit to the column name as **Emissions_kt** and saved the new dataset under the *data_derived* subfolder. 
+The unit megaton (Mt) for the Emission column was not noted in the original dataset. We found the unit in the README.md file of the original GitHub repo at <https://github.com/openclimatedata/edgar-co2-emissions>  and added the unit to the column name as **Emissions_Mt** and saved the new dataset under the *data_derived* subfolder. 
 
 ```{r renamecol, echo = FALSE}
 # change the column name of Emissions to include the unit kt
-CO2Em_kt <- CO2Em
-colnames(CO2Em_kt)[5] <- "Emissions_kt"
+CO2Em_Mt <- CO2Em
+colnames(CO2Em_Mt)[5] <- "Emissions_Mt"
 
 #write the new dataframe into a csv file under data_derived
 
-write.csv(CO2Em_kt, "../data_derived/CO2Emission_kt.csv", row.names = FALSE)
+write.csv(CO2Em_Mt, "../data_derived/CO2Emission_Mt.csv", row.names = FALSE)
 
 ```
 
@@ -66,7 +66,7 @@ CO2EM_US_plot <- ggplot(data = CO2Em[CO2Em$Code == 'USA', ], aes(x = Year, y = E
   geom_point() +
   ggtitle("Emissions of Carbon Dioxide from different sectors in the U.S.
           ") +
-  labs( y = "Emissions (kt)") +
+  labs( y = "Emissions (Mt)") +
   theme_classic() +
   theme(legend.title = element_blank()) 
   
@@ -87,7 +87,7 @@ CO2EM_US_Boxplot <- ggplot(data = CO2Em[CO2Em$Code == 'USA', ], aes(x = Sector, 
   geom_boxplot() +
   ggtitle("Emissions of Carbon Dioxide from different sectors in the U.S.
           ") +
-  labs( y = "Emissions (kt)") +
+  labs( y = "Emissions (Mt)") +
   coord_flip() +
   theme_classic() +
   theme(legend.position = "none") 
