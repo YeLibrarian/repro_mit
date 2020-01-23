@@ -28,7 +28,9 @@ More about the dataset and similar climate datasets can be found at <https://ope
 ## Run this Project in the cloud
 To run this code without installing anything, click on the launch binder badge above. This will launch Rstudio on a free, small, cloud instance. It may take a two or three minutes to launch the server and initialise Rstudio. 
 
-Once the browder tab with the RStudio running in it opens up, you can find the file under *code* folder named *CO2EmissionsAnalysis.Rmd* in the Files tab of the bottom and right pane. Open the file by clicking on it. Then, click the Knit button just above the code to generate the report CO2EmissionAnalysis.html. 
+Once the browder tab with the RStudio running in it opens up, you can find the file under *code* folder named *CO2EmissionsAnalysis.Rmd* in the Files tab of the bottom and right pane. Open the file by clicking on it. Then, click the Knit button just above the code to generate the report CO2EmissionAnalysis.html. You may also generate the report by typing source('run.r') into the left bottom Console and hit return key. This will generate the report in HTML and saved under documents folder. 
+
+
 
 ## Structue of the project
 ... ...
