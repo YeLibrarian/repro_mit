@@ -1,7 +1,7 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/YeLibrarian/repro_mit_20200123/master?urlpath=rstudio)
 
-# repro_mit_20200123
-This repo is for teaching a workshop on computationally reproducible research at MIT on January 23, 2020. Examples in this repo are using R as a tool. 
+# repro_mit
+This repo is for teaching a workshop on computationally reproducible research at MIT. Examples in this repo are using R as a tool. 
 
 
 This is a practice project using the EDGAR CO2 emissions data from 1970 – 2018. 
@@ -26,7 +26,11 @@ The dataset was originally reported in Crippa, M., Oreggioni, G., Guizzardi, D.,
 More about the dataset and similar climate datasets can be found at <https://openclimatedata.net/>
 
 ## Run this Project in the cloud
-To run this code without installing anything, click on the launch binder badge above. This will launch Rstudio on a free, small, cloud instance. It may take a two or three minutes to launch the server and initialise Rstudio. 
+To run this code without installing anything, choose one of the following two means. 
+
+1. Run a copy of it on the interactive environment Renku at <https://renkulab.io/projects/yel/reproducible-research-r/environments>. Click on starting a *New* environment there.   
+
+2. Click on the launch binder badge above. This will launch Rstudio on a free, small, cloud instance on binder.org. It may take a two or three minutes to launch the server and initialise Rstudio. 
 
 Once the browder tab with the RStudio running in it opens up, you can find the file under *code* folder named *CO2EmissionsAnalysis.Rmd* in the Files tab of the bottom and right pane. Open the file by clicking on it. Then, click the Knit button just above the code to generate the report CO2EmissionAnalysis.html. You may also generate the report by typing source('run.r') into the left bottom Console and hit return key. This will generate the report in HTML and saved under documents folder. 
 
