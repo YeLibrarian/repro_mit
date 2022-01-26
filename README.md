@@ -30,7 +30,7 @@ More about the dataset and similar climate datasets can be found at <https://ope
 ## Run this Project in the cloud
 To run this code without installing anything, choose one of the following two means. 
 
-1. Run a copy of it on the interactive environment Renku at <https://renkulab.io/projects/yel/reproducible-research-r/environments>. Click on starting a *New* environment there.   
+1. Run another copy of it on the interactive environment Renku at <https://renkulab.io/projects/yel/reproducibility-mit-20220127/sessions>. Click on starting a *New* environment there.   
 
 2. Click on the launch binder badge above. This will launch Rstudio on a free, small, cloud instance on binder.org. It may take a two or three minutes to launch the server and initialise Rstudio. 
 
