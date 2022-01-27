@@ -1,4 +1,5 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/YeLibrarian/repro_mit_20200123/master?urlpath=rstudio)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/YeLibrarian/repro_mit/master?urlpath=rstudio)
 
 # repro_mit
 This repo is for teaching a workshop on computationally reproducible research at MIT. Examples in this repo are using R as a tool. 
